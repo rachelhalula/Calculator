@@ -50,6 +50,22 @@ public class Calculator
         
         cFrame.add(jpButtons, BorderLayout.PAGE_END);
         
+        //the results panel
+        JLabel resultsLabel = new JLabel("Results = " + results);
+        resultsLabel.setName("resultsLabel");
+        
+        cFrame.add(resultsLabel, BorderLayout.LINE_START);
+        
+        //the numbers given
+        JPanel jpText = new JPanel();
+        JTextField rightOperand = new JTextField(10);
+        rightOperand.setName("rightOperand");
+        JTextField leftOperand = new JTextField(10);
+        leftOperand.setName("leftOperand");
+        jpText.add(rightOperand);
+        jpText.add(leftOperand);
+        
+        cFrame.add(jpText, BorderLayout.PAGE_START);
     }
     
     public static void main(String[] args)
