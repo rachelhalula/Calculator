@@ -66,10 +66,116 @@ public class Calculator
         jpText.add(leftOperand);
         
         cFrame.add(jpText, BorderLayout.PAGE_START);
+        
+        //Listeners for the buttons
+        addButton.addActionListener(new InnerClassAdd());
+        subButton.addActionListener(new InnerClassSub());
+        multButton.addActionListener(new InnerClassMult());
+        divButton.addActionListener(new InnerClassDiv());
     }
     
+    public class InnerClassAdd implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum + leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }
+    
+      public class InnerClassSub implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum - leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                              
+    
+     public class InnerClassMult implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum * leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                               
+    
+     public class InnerClassDiv implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum / leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                               
+                                   
     public static void main(String[] args)
     {
-        
+        Calculator calc = new Calculator();
     }
 }
