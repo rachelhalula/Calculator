@@ -99,8 +99,83 @@ public class Calculator
         }
     }
     
+      public class InnerClassSub implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum - leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                              
+    
+     public class InnerClassMult implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum * leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                               
+    
+     public class InnerClassDiv implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            String right = rightOperand.getText();
+            String left = leftOperand.getText();
+            try{
+                if (right.equals("")||left.equals(""))
+                {
+                    result.setText("Results: ERROR);
+                }
+                else
+                {
+                    int rightNum = Integer.parseInt(right);
+                    int leftNum = Integer.parseInt(left);
+                    result.setText("Results: " + rightNum / leftNum);
+                }
+            }
+            catch (NumberFormatException f)
+            {
+                result.setText("Results: ERROR");
+            }
+        }
+    }                               
+                                   
     public static void main(String[] args)
     {
-        
+        Calculator calc = new Calculator();
     }
 }
